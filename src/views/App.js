@@ -1,5 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Component from './exampie/Component';
+// import Component from './exampie/Component.js';
 
 function App() {
   return (
@@ -7,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          hello word js
+          lam cai gi do hay ho voi Linhdsad:))
         </p>
         <a
           className="App-link"
@@ -17,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <Component />
       </header>
     </div>
   );
