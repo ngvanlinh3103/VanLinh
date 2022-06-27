@@ -2,12 +2,16 @@ import React from 'react';
 
 class Component extends React.Component {
 
+    handleClick = () => {
+        alert('click rồi.')
+    }
+
     render() {
 
         //oject
         this.state = {
             name: 'NVL',
-            job: 'dsada'
+            job: 'PQC'
         }
 
         return (
@@ -19,7 +23,12 @@ class Component extends React.Component {
                 <div className='first'>
                     hello Component, ten toi la: {this.state.name}
                 </div>
-                <div className='second'> culi: {this.state['job']}</div>
+                <div className='second'>
+                    culi: {this.state['job']}
+                </div>
+                <div className='button'>
+                    <button onClick={() => this.handleClick()}>Click</button>
+                </div>
             </>
             // </div>
         );

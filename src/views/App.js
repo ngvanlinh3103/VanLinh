@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import Component from './exampie/Component';
-// import Component from './exampie/Component.js';
+import Component from './exampie/Component.js';
 
 function App() {
   return (
