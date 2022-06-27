@@ -20,9 +20,11 @@ function App() {
         >
           Learn React
         </a>
+
         {/* <Component />
         <FunctionComponent /> */}
         <Forms />
+
       </header>
     </div>
   );
