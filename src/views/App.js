@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.scss';
 import Component from './exampie/Component.js';
+import FunctionComponent from './exampie/FunctionComponent.js';
+import Forms from './exampie/Forms.js';
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          lam cai gi do hay ho voi Linhdsad:))
+          lam cai gi do hay ho voi Linhsad:))
         </p>
         <a
           className="App-link"
@@ -18,7 +20,9 @@ function App() {
         >
           Learn React
         </a>
-        <Component />
+        {/* <Component />
+        <FunctionComponent /> */}
+        <Forms />
       </header>
     </div>
   );
