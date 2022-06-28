@@ -1,11 +1,18 @@
 import React from 'react';
+import ChildComponent from './ChildComponent';
 
 class Component extends React.Component {
 
     //oject
     state = {
         name: '',
-        job: 'PQC'
+        jobs: [
+            { id: '1', tittle: 'Free', Salary: '500' },
+            { id: '2', tittle: 'PQC', Salary: '600' },
+            { id: '3', tittle: 'DEV', Salary: '600' }
+        ],
+        phone: '099554655',
+        address: 'Hà Nội'
     }
 
     handleClick = () => {
@@ -13,7 +20,6 @@ class Component extends React.Component {
     }
 
     handleChangeName = (event) => {
-        //console.log(event)
         this.setState({
             name: event.target.value
         })
@@ -22,10 +28,7 @@ class Component extends React.Component {
     render() {
 
         return (
-            // neu ko muon bov banh the div co the dung:
-            // "<>code</>"or"<React.Fragment>code</React.Fragment>"
 
-            // <div className='cha'>
             <>
                 <div className='name'>
                     <input type="text" value={this.state.name}
@@ -36,13 +39,17 @@ class Component extends React.Component {
                     hello , ten toi la: {this.state.name}
                 </div>
                 <div className='second'>
-                    culi: {this.state['job']}
+                    Phone: {this.state['phone']}
                 </div>
-                <div className='button'>
+
+                <ChildComponent address={this.state.address} jobs={this.state.jobs}
+                />
+
+                {/* <div className='button'>
                     <button onClick={() => this.handleClick()}>Click</button>
-                </div>
+                </div> */}
+
             </>
-            // </div>
         );
     }
 }

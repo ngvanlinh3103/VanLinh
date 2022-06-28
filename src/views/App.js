@@ -21,9 +21,9 @@ function App() {
           Learn React
         </a>
 
-        {/* <Component />
-        <FunctionComponent /> */}
-        <Forms />
+        <Component />
+        <FunctionComponent />
+        {/* <Forms /> */}
 
       </header>
     </div>
