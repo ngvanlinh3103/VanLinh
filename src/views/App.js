@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.scss';
 import Component from './exampie/Component.js';
 import FunctionComponent from './exampie/FunctionComponent.js';
-import Forms from './exampie/Forms.js';
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
 
         <Component />
         <FunctionComponent />
-        {/* <Forms /> */}
 
       </header>
     </div>

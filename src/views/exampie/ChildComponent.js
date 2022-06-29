@@ -12,6 +12,10 @@ class ChildComponent extends React.Component {
         })
     }
 
+    handleOnClickDelete = (job) => {
+        this.props.deleteJob(job);
+    }
+
     render() {
 
         let { address, jobs } = this.props;
@@ -23,8 +27,6 @@ class ChildComponent extends React.Component {
 
         return (
             <>
-                <div>Địa Chỉ: {address}</div>
-
                 {showJobs === false ?
                     <button className="show" onClick={() => this.clickShowHide()}>Show</button>
                     :
@@ -35,7 +37,8 @@ class ChildComponent extends React.Component {
                                     return (
 
                                         <div key={item.id}>
-                                            {item.tittle} - {item.Salary} $
+                                            {item.tittle} - {item.Salary}$ <></>
+                                            <span onClick={() => this.handleOnClickDelete(item)}>x</span>
                                         </div>
                                     )
                                 })
@@ -44,6 +47,8 @@ class ChildComponent extends React.Component {
                         <button className="hide" onClick={() => this.clickShowHide()}>Hide</button>
                     </>
                 }
+                <br />
+                <div>Địa Chỉ: {address}</div>
             </>
         )
     }

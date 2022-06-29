@@ -1,5 +1,6 @@
 import React from 'react';
 import ChildComponent from './ChildComponent';
+import AddComponent from './AddComponent';
 
 class Component extends React.Component {
 
@@ -15,8 +16,25 @@ class Component extends React.Component {
         address: 'Hà Nội'
     }
 
-    handleClick = () => {
-        alert('click rồi. ' + this.state.name)
+    //add job chuyền từ Component con lên cha
+    addNewJob = (job) => {
+        // let currentJob = this.state.jobs;
+        // currentJob.push(job);
+
+        this.setState({
+            jobs: [... this.state.jobs, job]
+            // jobs: currentJob
+        })
+    }
+
+    //delete job chuyền từ Component child lên cha
+    deleteJob = (job) => {
+        console.log('pt xoa: ', job);
+        let currentJobs = this.state.jobs;
+        currentJobs = currentJobs.filter(item => item.id !== job.id)
+        this.setState({
+            jobs: currentJobs
+        })
     }
 
     handleChangeName = (event) => {
@@ -42,12 +60,13 @@ class Component extends React.Component {
                     Phone: {this.state['phone']}
                 </div>
 
-                <ChildComponent address={this.state.address} jobs={this.state.jobs}
+                <AddComponent
+                    addNewJob={this.addNewJob}
                 />
-
-                {/* <div className='button'>
-                    <button onClick={() => this.handleClick()}>Click</button>
-                </div> */}
+                <ChildComponent
+                    address={this.state.address} jobs={this.state.jobs}
+                    deleteJob={this.deleteJob}
+                />
 
             </>
         );
